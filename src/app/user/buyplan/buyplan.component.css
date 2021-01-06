@@ -1,0 +1,10 @@
+.card {
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
+.card:hover {
+  -webkit-transform: skew(1 1);
+          transform: skew(1 1);
+}
+/*# sourceMappingURL=buyplan.component.css.map */

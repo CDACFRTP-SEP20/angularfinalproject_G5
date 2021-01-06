@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Hi {{user.userName}}</h1>
+<div mat-dialog-content>
+
+
+  <h4>Select your membership:</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Validity</mat-label>
+  <mat-select  [(ngModel)]="memdata">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let member of memberShipData" [value]="member">{{member.validity}} Months - {{member.fees|currency:'INR'}}</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="memdata">Ok</button>
+</div>

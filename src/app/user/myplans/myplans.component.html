@@ -1,0 +1,57 @@
+<p>myplans works!</p>
+
+
+<div class="container-fluid" *ngIf="usersAllPlan; else other">
+  <div class="row bg-light">
+    <mat-list>
+      <mat-list-item class="m-1" *ngFor="let plan of usersAllPlan " [ngSwitch]="plan.sportName">
+
+        <div class="row">
+          <div class="col">
+        <img *ngSwitchCase="'Cricket'" matListAvatar src="../../../assets/images/cricket.jpg" alt="no img"  width="50" height="50">
+        <img *ngSwitchCase="'Football'" matListAvatar src="../../../assets/images/football.jpg" alt="no img"  width="50" height="50">
+        <img *ngSwitchCase="'Tennis'" matListAvatar src="../../../assets/images/tennis.jpg"  alt="no img"  width="50" height="50">
+        <img *ngSwitchCase="'Hockey'" matListAvatar src="../../../assets/images/hockey.jpg" alt="no img"  width="50" height="50">
+        <img matListAvatar *ngSwitchCase="'Badminton'" src="../../../assets/images/badminton.jpg" alt="no img"  width="50" height="50">
+          </div>
+          <div class="col">
+        <h3 matLine> {{plan.planName}} Offer </h3>
+        <p matLine>
+          <span> {{plan.sportName}} </span>
+        </p>
+        </div>
+        <div class="col">
+          <h3 matLine> {{plan.validTill}} </h3>
+          <p matLine>
+            <span> {{plan.fees | currency:'INR'}} </span>
+          </p>
+          </div>
+
+        </div>
+        <div class="col">
+          <button mat-raised-button color="primary" class="m-3" (click)="addReview(plan.sportId)">Add Review</button>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+
+<ng-template #other>
+  <div class="container d-flex justify-content-center">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{errMsg}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-lg-image src="../../../assets/images/nomembership.png" alt="Photo of a Shiba Inu">
+      <mat-card-actions>
+        <button mat-menu-item color="primary" (click)="buyPlan()">
+          <mat-icon color="primary">shopping_bag</mat-icon>
+          <span>Buy Plan</span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+  </ng-template>

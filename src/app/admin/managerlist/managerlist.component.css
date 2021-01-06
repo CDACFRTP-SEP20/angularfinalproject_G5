@@ -1,0 +1,15 @@
+.table {
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+mat-footer-row mat-footer-cell {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: italic;
+}
+/*# sourceMappingURL=managerlist.component.css.map */

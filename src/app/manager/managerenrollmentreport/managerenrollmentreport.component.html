@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+  <div class="mat-elevation-z8 m-3">
+    <table mat-table [dataSource]="datasource" matSort>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> User Name </th>
+        <td mat-cell *matCellDef="let enrollment"> {{enrollment.userName}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+     <ng-container matColumnDef="batchName">
+     <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Batch Name </th>
+      <td mat-cell *matCellDef="let enrollment"> {{enrollment.batchName}} </td>
+       </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="sportName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Sport Name </th>
+        <td mat-cell *matCellDef="let enrollment"> {{enrollment.sportName}} </td>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Start Date </th>
+        <td mat-cell *matCellDef="let enrollment"> {{enrollment.startDate}} </td>
+      </ng-container>
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="availability">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Availability </th>
+        <td mat-cell *matCellDef="let enrollment"> {{enrollment.availability}} </td>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Status </th>
+        <td mat-cell *matCellDef="let enrollment"> {{enrollment.status}} </td>
+      </ng-container>
+
+
+            <ng-container matColumnDef="loading">
+              <mat-footer-cell *matFooterCellDef colspan="8">
+                Loading Data ...
+              </mat-footer-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="noData">
+              <mat-footer-cell *matFooterCellDef colspan="8">
+                No Data ...
+              </mat-footer-cell>
+            </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':datasource != null}"></mat-footer-row>
+      <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide': !(datasource != null && datasource.data.lengath==0)}"></mat-footer-row>
+    </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5" showFirstLastButtons class="text-uppercase font-weight-bolder bg-light text-dark"></mat-paginator>
+    </div>
+</body>
+</html>

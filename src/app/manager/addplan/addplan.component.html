@@ -1,0 +1,72 @@
+ <div class="container">
+  <mat-card class=" mx-auto d-block">
+    <mat-card-title>Add Plan</mat-card-title>
+  <mat-card-content>
+  <form [formGroup]="addplanForm"  (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="text" matInput placeholder="PlanName"  class="form-control" formControlName="planName">
+    </mat-form-field>
+    <span class="error" *ngIf="planName.touched">Enter planname</span>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="number" matInput placeholder="fees" class="form-control" formControlName="fees">
+    </mat-form-field>
+    <span class="error" *ngIf="fees.touched">Enter numeric and valid data for fees</span>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="date" matInput placeholder="startDate" class="form-control" formControlName="startDate">
+    </mat-form-field>
+    <span class="error" *ngIf="startDate.touched">Enter date</span>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="number" matInput placeholder="duration" class="form-control" formControlName="duration" >
+    </mat-form-field>
+    <span class="error" *ngIf="duration!.invalid && duration.touched">Enter valid duration</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="number" matInput placeholder="discount" class="form-control" formControlName="discount" >
+    </mat-form-field>
+    <span class="error" *ngIf="discount!.invalid && discount.touched">Enter number only</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="number" matInput placeholder="userid" class="form-control" formControlName="userid" >
+    </mat-form-field>
+    <span class="error" *ngIf="userid!.invalid && userid.touched">Enter number only</span>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="number" matInput placeholder="sportid" class="form-control" formControlName="sportid" >
+    </mat-form-field>
+    <span class="error" *ngIf="sportid!.invalid && sportid.touched">Enter number only</span>
+    </div>
+  </div>
+
+<div class="button">
+<button type="submit" [disabled]="addplanForm.invalid" class="submit mx-auto d-block" mat-raised-button color="primary">Add Plan</button>
+</div>
+  </form>
+  </mat-card-content>
+  </mat-card>
+  </div>
+
+

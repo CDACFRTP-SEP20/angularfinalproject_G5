@@ -1,0 +1,31 @@
+{
+  "HOME":{
+    "TITLE":"Hello Welcome to Internationalization.",
+    "TEXT":"This is demo not original App.",
+    "SELECT":"Select Language",
+    "MENU":{
+      "HOME":"Home",
+      "ABOUT":"About",
+      "SERVICES":"Services",
+      "ACCOUNT":"Account",
+      "MEMBERSHIP":"Membership",
+      "PLAN":"Plan",
+      "BATCHES":"Batches"
+    }
+  },
+  "MEMBERSHIP":{
+    "MEMBERSHIPT1":"Elite",
+    "MEMBERSHIPT2":"Excusive",
+    "BENEFITS":"Benefits",
+    "CONTENT":{
+      "CONTENT1":"UNLIMITED ACCESS TO FITNESS AREA",
+      "CONTENT2":"VALIDITY 6 MONTHS",
+      "CONTENT3":"FREE WIFI",
+      "CONTENT4":"DISCOUNT IN MANUAL THERAPY AND SPORT THERAPY",
+      "CONTENT5":"PERSONAL ADVICE: WORKOUTS AND NUTRITIONAL COUNSELING",
+      "CONTENT6":"WORKSHOPS AND OTHER FREE AND EXCLUSIVE EVENTS FOR MEMBERS",
+      "CONTENT7":"VALIDITY 12 MONTHS"
+    }
+
+}
+}

@@ -1,0 +1,99 @@
+ <div class="container">
+  <mat-card class=" mx-auto d-block text-center mt-4">
+    <mat-card-title>LOGIN</mat-card-title>
+  <mat-card-content>
+  <form (ngSubmit)="onLogin()">
+    <div class="row">
+      <div class="col">
+      <mat-form-field>
+        <input type="email"
+        matInput placeholder="Email"
+        name="username"
+        [(ngModel)]="otp.email"
+        required
+        minlength="3"
+        #un="ngModel" required>
+      </mat-form-field>
+    </div>
+    </div>
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="password"
+      matInput placeholder="Password"
+      name="password"
+                [(ngModel)]="password"
+                minlength="3"
+                #pwd="ngModel">
+    </mat-form-field>
+  </div>
+  </div>
+
+  <div class="button m-4">
+
+    <button type="submit" class="submit mx-auto d-block" mat-raised-button color="primary" >Login</button>
+  </div>
+
+  <h2 class="text-center m-2 text-dark">OR</h2>
+
+  <div class="button m-4">
+    <button type="submit" class="submit mx-auto d-block text-light" mat-raised-button color="primary" (click)="sendOtp()">Request For OTP</button>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col m-1 ">  <a routerLink="/register">New To Club? Register Here</a></div>
+     <div class="col m-1 ml-1 "> <a routerLink="/forgotpassword">Forgot Password?</a></div>
+  </div>
+  </form>
+  </mat-card-content>
+  </mat-card>
+  </div>
+  <div class="container" *ngIf="flag==1">
+    <mat-card class=" mx-auto d-block text-center">
+
+    <mat-card-content>
+    <form (ngSubmit)="verifyOtp()">
+    <div class="row">
+      <div class="col">
+      <mat-form-field>
+        <input type="number" id="otpenable" matInput placeholder="OTP" name="otp" [(ngModel)]="otp.otp" >
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <button mat-raised-button color="primary">Verify</button>
+    </div>
+    </div>
+    </form>
+    </mat-card-content>
+    </mat-card>
+  </div>
+<!--
+<h1>Login form</h1>
+<div [ngStyle]="{'color':'red'}" *ngIf="errorMessage">{{errorMessage}}</div>
+
+<form method="POST" #loginform="ngForm" (ngSubmit)="onLogin()" >
+    Username: <input type="text"
+                    name="username"
+                    [(ngModel)]="username"
+                    required
+                    minlength="3"
+                    #un="ngModel"
+                    >
+    <div [ngStyle] = "{'color': 'red'}"
+                *ngIf="un?.invalid && un?.touched"
+                >Please enter valid username(min 3 char)</div>
+    <br>
+    Password: <input type="password"
+                name="password"
+                [(ngModel)]="password"
+                required
+                minlength="3"
+                #pwd="ngModel"
+                >
+    <div [ngStyle] = "{'color': 'red'}"
+                    *ngIf="pwd?.invalid && pwd?.touched"
+                    >Please enter valid password(min 3 char)</div>
+    <br><br>
+    <input type="checkbox" value="lsRememberMe" id="rememberMe" class="text-light"> Remember Me <label for="rememberMe">Remember me</label>
+    <input type="submit" value="Login">
+</form> -->

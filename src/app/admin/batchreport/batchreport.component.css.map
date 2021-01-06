@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,KAAK;CAGb;;AAGD,AAAA,KAAK,CAAA;EACH,OAAO,EAAE,IAAI;CACd;;AAED,AAAA,cAAc,CAAC,eAAe,CAAA;EAC5B,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;CACnB",
+    "sources": [
+        "batchreport.component.scss"
+    ],
+    "names": [],
+    "file": "batchreport.component.css"
+}

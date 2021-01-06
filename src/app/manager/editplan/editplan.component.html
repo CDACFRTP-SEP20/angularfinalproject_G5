@@ -1,0 +1,68 @@
+<p>updateplan works!</p>
+
+<div class="container">
+    <mat-card class=" mx-auto d-block">
+      <mat-card-title>Update Plan</mat-card-title>
+    <mat-card-content>
+    <form (ngSubmit)="updatePlan()">
+    <div class="row">
+        <div class="col">
+        <mat-form-field>
+          <input type="text" matInput placeholder="PlanName"  name="planname" [(ngModel)]="plan.planName">
+        </mat-form-field>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col">
+        <mat-form-field>
+          <input type="number" matInput placeholder="fees" name="fees" [(ngModel)]="plan.fees">
+        </mat-form-field>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col">
+        <mat-form-field>
+          <input type="date" matInput placeholder="startDate" name="startDate" [(ngModel)]="plan.startDate">
+        </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+        <mat-form-field>
+          <input type="number" matInput placeholder="duration" name="duration" [(ngModel)]="plan.duration">
+        </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col">
+          <mat-form-field>
+            <input type="number" matInput placeholder="discount" name="discount" [(ngModel)]="plan.discount">
+          </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+          <mat-form-field>
+            <input type="text" matInput placeholder="userid" name="userid" [(ngModel)]="plan.userid">
+          </mat-form-field>
+          </div>
+        </div>
+
+          <div class="row">
+              <div class="col">
+              <mat-form-field>
+                <input type="text" matInput placeholder="sportid" name="sportid" [(ngModel)]="plan.sportid">
+              </mat-form-field>
+              </div>
+        </div>
+
+      <div class="button">
+        <button type="submit" class="submit mx-auto d-block" mat-raised-button color="primary">Update Plan</button>
+      </div>
+      </form>
+      </mat-card-content>
+      </mat-card>
+      </div>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACL,KAAK,EAAE,IAAI;CACZ;;AAED,AAAA,KAAK,CAAA;EACH,OAAO,EAAE,IAAI;CACd;;AAED,AAAA,cAAc,CAAC,eAAe,CAAA;EAC5B,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;CACnB",
+    "sources": [
+        "managerlist.component.scss"
+    ],
+    "names": [],
+    "file": "managerlist.component.css"
+}

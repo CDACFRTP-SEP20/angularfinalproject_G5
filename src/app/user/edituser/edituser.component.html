@@ -1,0 +1,46 @@
+<h1>Update User</h1>
+
+<div class="container">
+    <mat-card class=" mx-auto d-block">
+      <mat-card-title>Edit</mat-card-title>
+    <mat-card-content>
+    <form (ngSubmit)="updateuser()">
+        <div class="row">
+            <div class="col">
+            <mat-form-field>
+              <input type="text" matInput placeholder="User Name"  name="userName" [(ngModel)]="user.userName" >
+            </mat-form-field>
+          </div>
+          </div>
+          <div class="row">
+              <div class="col">
+              <mat-form-field>
+                <input type="text" matInput placeholder="Address" name="address" [(ngModel)]="user.address">
+              </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+              <mat-form-field>
+                <input type="number" matInput placeholder="Mobile Number" name="mobileNumber" [(ngModel)]="user.mobileNumber">
+              </mat-form-field>
+              </div>
+            </div>
+          <div class="row">
+            <div class="col">
+            <mat-form-field>
+              <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="user.email" readonly>
+            </mat-form-field>
+            </div>
+          </div>
+
+
+
+
+    <div class="button">
+      <button type="submit" class="submit mx-auto d-block" mat-raised-button color="primary">Update</button>
+    </div>
+    </form>
+    </mat-card-content>
+    </mat-card>
+  </div>

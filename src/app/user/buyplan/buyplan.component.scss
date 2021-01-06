@@ -1,0 +1,7 @@
+.card{
+  transition: width 2s;
+}
+
+.card:hover {
+  transform: skew(1 1);
+}

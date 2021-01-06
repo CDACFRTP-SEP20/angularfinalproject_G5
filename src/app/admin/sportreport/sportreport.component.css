@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+mat-footer-row mat-footer-cell {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: italic;
+}
+/*# sourceMappingURL=sportreport.component.css.map */

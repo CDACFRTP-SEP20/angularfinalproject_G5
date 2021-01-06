@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAA;EACH,UAAU,EAAE,QAAQ;CACrB;;AAED,AAAA,KAAK,AAAA,MAAM,CAAC;EACV,SAAS,EAAE,SAAS;CACrB",
+    "sources": [
+        "buyplan.component.scss"
+    ],
+    "names": [],
+    "file": "buyplan.component.css"
+}

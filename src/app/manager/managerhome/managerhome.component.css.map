@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,KAAK,CAAA;EACD,KAAK,EAAC,CAAoB;CAC7B",
+    "sources": [
+        "managerhome.component.scss"
+    ],
+    "names": [],
+    "file": "managerhome.component.css"
+}

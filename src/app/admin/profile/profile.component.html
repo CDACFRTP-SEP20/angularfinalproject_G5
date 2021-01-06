@@ -1,0 +1,59 @@
+
+<div class="container">
+    <mat-card class=" mx-auto d-block">
+        <mat-card-title>UPDATE Profile</mat-card-title>
+        <mat-card-content>
+            <form (ngSubmit)="updateprofile()">
+              <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="Username" name="username"
+                                [(ngModel)]="user.userName" >
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="email" matInput placeholder="email" name="email" [(ngModel)]="user.email"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            title="Invalid email address (ex: sample@dsc.com)" readonly required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="input" matInput placeholder="Address" name="address"
+                                [(ngModel)]="user.address" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="input" matInput placeholder="Mobile Number" name="mobileno"
+                                [(ngModel)]="user.mobileNumber"
+                                pattern="[0-9]{10}"
+                                title="must contain ten digits mobile number" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+
+                <div class="button">
+                    <button type="submit" class="submit mx-auto d-block" mat-raised-button
+                        color="primary">UPDATE</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+
+
+
+

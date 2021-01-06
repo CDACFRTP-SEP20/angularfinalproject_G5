@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<mat-grid-list class="m-2" cols="2" rowHeight="2:1">
+
+  <mat-grid-tile>
+    <div id="chartContainer" class="font-weight-bold" >
+      <h3 class="text-center">Sport Enrollment Report</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    <div id="chartContainer" class="font-weight-bold" >
+      <h3 class="text-center">Sport Likes Report</h3>
+      <canvas id="lineChart"></canvas>
+    </div>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    <div class="chart-wrapper font-weight-bold">
+      <h3 class="text-center">Count of Available Entry in SportClub</h3>
+
+      <canvas baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [plugins]="barChartPlugins"
+      [legend]="barChartLegend"
+      [chartType]="barChartType"
+      [colors]="barChartColors"
+      >
+    </canvas>
+  </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <div class="mat-elevation-z8 m-3">
+      <h3 class="text-center">Plan Details</h3>
+
+      <table mat-table [dataSource]="datasource" matSort>
+
+        <!-- Manager Name Column -->
+        <ng-container matColumnDef="planName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Plan Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.planName}} </td>
+        </ng-container>
+
+        <!-- Manager Email Column -->
+        <ng-container matColumnDef="fees">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Fees </th>
+          <td mat-cell *matCellDef="let element"> {{element.fees}} </td>
+        </ng-container>
+
+        <!-- Manager Email Column -->
+        <ng-container matColumnDef="discount">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-uppercase font-weight-bolder bg-light text-dark text-center"> Discount </th>
+          <td mat-cell *matCellDef="let element"> {{element.discount}} </td>
+        </ng-container>
+
+        <!-- Display Table Header Row -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+      <!-- Pagination Row -->
+      <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5" showFirstLastButtons class="text-uppercase font-weight-bolder bg-light text-dark"></mat-paginator>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>
+</body>
+</html>
+

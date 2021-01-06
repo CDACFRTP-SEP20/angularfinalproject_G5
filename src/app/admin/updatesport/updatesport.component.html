@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-card class=" mx-auto d-block">
+    <mat-card-title>Update SPORT</mat-card-title>
+  <mat-card-content>
+  <form (ngSubmit)="updateSport()">
+  <div class="row">
+    <div class="col">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Sportname"  name="sportName" [(ngModel)]="sport.sportName">
+    </mat-form-field>
+  </div>
+</div>
+
+  <div class="button">
+    <button type="submit" class="submit mx-auto d-block" mat-raised-button color="primary">Submit</button>
+  </div>
+  </form>
+  </mat-card-content>
+  </mat-card>
+  </div>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CACR;EACE,KAAK,EAAC,GAAI;CACX;;AAED,AAAA,cAAc,CAAC;EACb,KAAK,EAAE,IAAI;CACZ;;AACD,AAAA,OAAO,CAAA;EACL,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "updateplan.component.scss"
+    ],
+    "names": [],
+    "file": "updateplan.component.css"
+}

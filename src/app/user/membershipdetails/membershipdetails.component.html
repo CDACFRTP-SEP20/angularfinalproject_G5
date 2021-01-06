@@ -1,0 +1,47 @@
+<p class="display-4 text-light text-center" color="primary">Membership</p>
+
+<div class="container d-flex justify-content-center" *ngIf="membership else other">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title color="primary">Current Memberhip</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <p>Start Date : {{membership.startDate}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>Start Date : {{membership.endDate}}</p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-menu-item color="primary" (click)="buyMembership()">
+        <mat-icon color="primary">shopping_bag</mat-icon>
+        <span>Renew Membership</span>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+<ng-template #other>
+<div class="container d-flex justify-content-center">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>No Membership</mat-card-title>
+    </mat-card-header>
+    <img mat-card-lg-image src="../../../assets/images/nomembership.png" alt="Photo of a Shiba Inu">
+    <mat-card-actions>
+      <button mat-menu-item color="primary" (click)="buyMembership()">
+        <mat-icon color="primary">shopping_bag</mat-icon>
+        <span>Buy Membership</span>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+</ng-template>

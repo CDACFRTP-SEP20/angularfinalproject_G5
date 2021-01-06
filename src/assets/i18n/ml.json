@@ -1,0 +1,30 @@
+{
+  "HOME":{
+    "TITLE":"ഹലോ അന്താരാഷ്ട്രവൽക്കരണത്തിലേക്ക് സ്വാഗതം.",
+    "TEXT":"ഇത് യഥാർത്ഥ അപ്ലിക്കേഷനല്ല ഡെമോ ആണ്.",
+    "SELECT":"ഭാഷ തിരഞ്ഞെടുക്കുക",
+    "MENU":{
+      "HOME":"വീട്",
+      "ABOUT":"കുറിച്ച്",
+      "SERVICES":"സേവനങ്ങള്",
+      "ACCOUNT":"അക്കൗണ്ട്",
+      "MEMBERSHIP":"അംഗത്വം",
+      "PLAN":"പ്ലാൻ",
+      "BATCHES":"ബാച്ചുകൾ"
+    }
+    },
+    "MEMBERSHIP":{
+      "MEMBERSHIPT1":"Elite",
+      "MEMBERSHIPT2":"Excusive",
+      "BENEFITS":"Benefits",
+      "CONTENT":{
+        "CONTENT1":"UNLIMITED ACCESS TO FITNESS AREA",
+        "CONTENT2":"VALIDITY 6 MONTHS",
+        "CONTENT3":"FREE WIFI",
+        "CONTENT4":"DISCOUNT IN MANUAL THERAPY AND SPORT THERAPY",
+        "CONTENT5":"PERSONAL ADVICE: WORKOUTS AND NUTRITIONAL COUNSELING",
+        "CONTENT6":"WORKSHOPS AND OTHER FREE AND EXCLUSIVE EVENTS FOR MEMBERS",
+        "CONTENT7":"VALIDITY 12 MONTHS"
+      }
+  }
+}

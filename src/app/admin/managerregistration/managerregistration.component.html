@@ -1,0 +1,74 @@
+
+<div class="container">
+    <mat-card class=" mx-auto d-block">
+        <mat-card-title>REGISTER MANAGER</mat-card-title>
+        <mat-card-content>
+            <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="Username" name="username"
+                                [(ngModel)]="manager.userName" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="email" matInput placeholder="email" name="email"
+                            [(ngModel)]="manager.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                            title="Invalid email address (ex: sample@dsc.com)" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="input" matInput placeholder="Address" name="address"
+                                [(ngModel)]="manager.address" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="input" matInput placeholder="Mobile Number" name="mobileno"
+                                [(ngModel)]="manager.mobileNumber" pattern="[0-9]{10}"
+                                title="must contain ten digits mobile number" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <input type="password" matInput placeholder="Password" name="password"
+                                [(ngModel)]="manager.password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" >
+                            <mat-label>Sport </mat-label>
+                            <mat-select name="select" [(ngModel)]="sport" multiple>
+                              <mat-option *ngFor="let sport1 of sportav" [value]="sport1" >{{sport1.sportName}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="button">
+                    <button type="submit" class="submit mx-auto d-block" mat-raised-button
+                        color="primary">REGISTER</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+

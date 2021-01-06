@@ -1,0 +1,80 @@
+<h1>Update Batch</h1>
+
+<div class="container">
+    <mat-card class=" mx-auto d-block">
+      <mat-card-title>Update Batch</mat-card-title>
+    <mat-card-content>
+    <form (ngSubmit)="updateBatch()">
+        <div class="row">
+            <div class="col">
+            <mat-form-field>
+              <input type="text" matInput placeholder="BatchName"  name="batchName" [(ngModel)]="batch.batchName">
+            </mat-form-field>
+          </div>
+          </div>
+          <div class="row">
+              <div class="col">
+              <mat-form-field>
+                <input type="date" matInput placeholder="startDate" name="startDate" [(ngModel)]="batch.startDate">
+              </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+              <mat-form-field>
+                <input type="time" matInput placeholder="startTime" name="startTime" [(ngModel)]="batch.startTime">
+              </mat-form-field>
+              </div>
+            </div>
+          <div class="row">
+            <div class="col">
+            <mat-form-field>
+              <input type="number" matInput placeholder="batchSize" name="batchSize" [(ngModel)]="batch.batchSize">
+            </mat-form-field>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            <mat-form-field>
+              <input type="number" matInput placeholder="duration" name="duration" [(ngModel)]="batch.duration">
+            </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            <mat-form-field>
+              <input type="text" matInput placeholder="SportName"  name="sportName" [(ngModel)]="batch.sportName">
+            </mat-form-field>
+          </div>
+          </div>
+          <!-- <div class="row">
+              <div class="col">
+              <mat-form-field>
+                <input type="number" matInput placeholder="availability" name="availability" [(ngModel)]="batch.availability">
+              </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+              <mat-form-field>
+                <input type="text" matInput placeholder="userId" name="userId" [(ngModel)]="batch.userId">
+              </mat-form-field>
+              </div>
+            </div>
+
+                <div class="row">
+                  <div class="col">
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="sportId" name="sportId" [(ngModel)]="batch.sportId">
+                  </mat-form-field>
+                  </div>
+            </div> -->
+
+    <div class="button">
+      <button type="submit" class="submit mx-auto d-block" mat-raised-button color="primary">Update</button>
+    </div>
+    </form>
+    </mat-card-content>
+    </mat-card>
+  </div>

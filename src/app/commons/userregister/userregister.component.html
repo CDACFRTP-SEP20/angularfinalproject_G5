@@ -1,0 +1,57 @@
+<div class="container">
+<mat-card class=" mx-auto d-block mt-4">
+  <mat-card-title>SIGN UP</mat-card-title>
+<mat-card-content>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<div class="row">
+  <div class="col">
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username"  class="form-control" formControlName="userName">
+  </mat-form-field>
+  <span class="error" *ngIf="userName!.invalid && userName?.touched">Enter valid username</span>
+</div>
+</div>
+<div class="row">
+  <div class="col">
+  <mat-form-field>
+    <input type="email" matInput placeholder="email" class="form-control" formControlName="email">
+  </mat-form-field>
+  <span class="error" *ngIf="email!.invalid && email?.touched">Enter valid email</span>
+</div>
+<div class="col">
+  <button type="button" mat-raised-button color="primary" (click)="verifyEmail(user.email)">Verify</button>
+</div>
+</div>
+<div class="row">
+  <div class="col">
+  <mat-form-field>
+    <input type="input" matInput placeholder="Address" class="form-control" formControlName="address" >
+  </mat-form-field>
+  <span class="error" *ngIf="address!.invalid && address?.touched">Enter valid Address</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+  <mat-form-field>
+    <input type="input" matInput placeholder="Mobile Number" class="form-control" formControlName="mobileNumber" >
+  </mat-form-field>
+  <span class="error" *ngIf="mobileNumber!.invalid && mobileNumber.touched">Enter 10 digit number</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" class="form-control" formControlName="password" >
+  </mat-form-field>
+  <span class="error" *ngIf="password!.invalid && password.touched">Password should be at least 8 characters long and should contain one number,one character and one special character</span>
+  </div>
+</div>
+<div class="button">
+  <button type="submit" class="submit mx-auto d-block" [disabled]="registerForm.invalid" mat-raised-button color="primary">Register</button>
+</div>
+</form>
+</mat-card-content>
+</mat-card>
+</div>
+

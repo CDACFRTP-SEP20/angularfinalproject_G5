@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,KAAK,EAAC,KAAK;CACd;;AAED,AAAA,KAAK,CACL;EACA,KAAK,EAAE,GAAG;CACT",
+    "sources": [
+        "sportlist.component.scss"
+    ],
+    "names": [],
+    "file": "sportlist.component.css"
+}

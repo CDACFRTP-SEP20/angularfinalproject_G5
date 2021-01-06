@@ -1,0 +1,80 @@
+<div class="container-fluid">
+<div class="row">
+
+  <div class="col-4 col-xs-4">
+    <div class="col-12">
+    <div class="card" [ngSwitch]="plan.sportName">
+      <span *ngSwitchCase="'Cricket'"><img src="../../../assets/images/cricket.jpg" class="card-img-top embed-responsive-item" alt="no img"></span>
+      <span *ngSwitchCase="'Football'"><img src="../../../assets/images/football.jpg" class="card-img-top embed-responsive-item" alt="no img"></span>
+      <span *ngSwitchCase="'Tennis'"><img src="../../../assets/images/tennis.jpg" class="card-img-top embed-responsive-item" alt="no img"></span>
+      <span *ngSwitchCase="'Hockey'"><img src="../../../assets/images/hockey.jpg" class="card-img-top embed-responsive-item" alt="no img"></span>
+      <span *ngSwitchCase="'Badminton'"><img src="../../../assets/images/badminton.jpg" class="card-img-top embed-responsive-item" alt="no img"></span>
+  </div>
+</div>
+<div class="col-12 text-light">
+  <button mat-icon-button [color]="color" (click)="changeLike()">
+    <mat-icon>{{icon}}</mat-icon>
+  </button>
+  <mat-list-item >
+    <div class="row">
+      <div class="col-6">
+    <h3 class="mt-3">{{plan.sportName}} </h3>
+    <p class="mt-3" class="card-text">
+      Validity: {{plan.duration}}  Months </p>
+    </div>
+    <div class="col-6">
+      <h5 class="mt-4"> <span class="font-weight-bold">{{plan.fees - plan.fees/100 * plan.discount | currency:'INR'}}</span>
+        <s> {{plan.fees | currency:'INR'}} </s>
+      </h5>
+      <p class="mt-3">{{plan.discount}}% off</p>
+    </div>
+    </div>
+  </mat-list-item>
+  <button mat-raised-button color="primary" class="mx-auto d-block mt-2" (click)="buyCurrentPlan()">
+    <mat-icon>shopping_cart</mat-icon>
+    Buy
+</button>
+</div>
+  </div>
+  <div class="col-8">
+    <div class="col-12" *ngIf="avgRating else error">
+      <mat-list-item>
+        <div class="row">
+          <div class="col-12">
+        <p class="text-light text-center">Ratings and Reviews</p>
+      </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-light bg-success rating">{{ avgRating }}<mat-icon>star_rate</mat-icon></h1>
+        </div>
+        </div>
+      </mat-list-item>
+      <mat-divider class="bg-light"></mat-divider>
+      <div class="row">
+        <div class="col">
+          <mat-list-item *ngFor="let review of allReview | async">
+
+            <div class="row ">
+              <div class="col-12 mt-3">
+                <p class="rating text-light bg-success ">{{ review.rating }}<mat-icon class="userating">star_rate</mat-icon></p>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+            <p class="text-light mx-4">{{review.comment}}</p>
+          </div>
+            </div>
+            <p class="text-light">{{review.user.userName}}</p>
+            <mat-divider class="bg-light"></mat-divider>
+          </mat-list-item>
+
+    </div>
+    </div>
+  </div>
+
+  <ng-template #error>
+    <h2 class="text-light">{{errorMsg}}</h2>
+  </ng-template>
+</div>
+</div>

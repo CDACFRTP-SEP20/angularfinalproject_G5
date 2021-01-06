@@ -1,0 +1,5 @@
+projectKey=major-project-angular-g5
+serverUrl=http://172.27.12.78
+dashboardUrl=http://172.27.12.78/dashboard/index/major-project-angular-g5
+ceTaskId=AXa3rozYirXW5IlAPW-m
+ceTaskUrl=http://172.27.12.78/api/ce/task?id=AXa3rozYirXW5IlAPW-m

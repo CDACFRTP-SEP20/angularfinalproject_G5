@@ -1,0 +1,262 @@
+ <!-- -----------------    user's nav bar     ------------------- -->
+ <div *ngIf="(userrole | async) as ur">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" *ngIf="ur === 'ROLE_USER'">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/images/1.png" style="display: inline-block;" class="rounded" height="30" width="40">&nbsp;
+      <span style="display: inline-block;" class="text-light">  Deccan Sport Club</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item active m-3 text-light">
+          <label for="">
+            {{'HOME.SELECT' | translate}}
+            <select #langselect (change)="translate.use(langselect.value)">
+              <option *ngFor="let langs of translate.getLangs()" [value]="langs">{{langs}}</option>
+            </select>
+          </label>
+
+        </li>
+        <li class="nav-item active m-3 text-light">
+          <button mat-button [matMenuTriggerFor]="menu">{{'HOME.MENU.MEMBERSHIP'| translate}}</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="buyMembership()">
+                <mat-icon>card_membership</mat-icon>
+                <span>Buy Membership</span>
+              </button>
+              <button mat-menu-item (click)="myMembership()">
+                <mat-icon>adjust</mat-icon>
+                <span>My Membership</span>
+              </button>
+            </mat-menu>
+        </li>
+
+        <li class="nav-item active m-3 text-light">
+          <button mat-button [matMenuTriggerFor]="planmenu">{{'HOME.MENU.PLAN'|translate}}</button>
+            <mat-menu #planmenu="matMenu">
+              <button mat-menu-item (click)="myPlans()">
+                <mat-icon>library_add_check</mat-icon>
+                <span>My Plans</span>
+              </button>
+              <button mat-menu-item (click)="allPlans()">
+                <mat-icon>library_add</mat-icon>
+                <span>Plans</span>
+              </button>
+            </mat-menu>
+        </li>
+
+        <li class="nav-item active m-3 text-light">
+          <button mat-button [matMenuTriggerFor]="batchmenu">{{'HOME.MENU.BATCHES'|translate}}</button>
+            <mat-menu #batchmenu="matMenu">
+              <button mat-menu-item (click)="batchesForUser()">
+                <mat-icon>library_add_check</mat-icon>
+                <span>All Batches</span>
+              </button>
+              <button mat-menu-item (click)="batchStatusForUser()">
+                <mat-icon>library_add</mat-icon>
+                <span>My Batches</span>
+              </button>
+            </mat-menu>
+        </li>
+
+        <li class="nav-item active m-3 text-light">
+          <button mat-button [matMenuTriggerFor]="settingsmenu">Settings</button>
+            <mat-menu #settingsmenu="matMenu">
+              <button mat-menu-item (click)="editUser()">
+                <mat-icon>library_add_check</mat-icon>
+                <span>User Profile</span>
+              </button>
+              <button mat-menu-item (click)="changepassword()">
+                <mat-icon>library_add</mat-icon>
+                <span>Change password</span>
+              </button>
+            </mat-menu>
+        </li>
+        <li class="nav-item active m-3 text-light">
+          <button mat-raised-button color="accent" (click)="logout()">
+            <mat-icon>directions_run</mat-icon>
+            Logout
+        </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+
+ <!--------------------------------------- Admin NavBar --------------------------------------->
+ <div *ngIf="(userrole | async) as ur">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" *ngIf="ur === 'ROLE_ADMIN'">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/images/1.png" style="display: inline-block;" class="rounded" height="30" width="40">&nbsp;
+      <span style="display: inline-block;" class="text-light">  Deccan Sport Club</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item active m-3 pt-2">
+          <a class="nav-link" routerLink="managerlist" class="text-light">MANAGER</a>
+        </li>
+
+        <li class="nav-item m-3 pt-2 ">
+          <a class="nav-link" routerLink="sportlist" class="text-light">SPORT</a>
+        </li>
+
+        <li class="nav-item active m-3 text-light">
+          <button mat-button [matMenuTriggerFor]="accountsAB">ACCOUNTS</button>
+            <mat-menu #accountsAB="matMenu">
+              <button mat-menu-item (click)=activeaccount() >
+                <mat-icon mat-mini-fab color="primary">lock_open</mat-icon>
+                <span>Active Accounts</span>
+              </button>
+              <button mat-menu-item (click)=blockaccount()>
+                <mat-icon mat-mini-fab color="warn">lock</mat-icon>
+                <span>Block Accounts</span>
+              </button>
+            </mat-menu>
+        </li>
+
+        <li class="nav-item active m-3 text-light">
+          <button mat-button [matMenuTriggerFor]="report">REPORT</button>
+            <mat-menu #report="matMenu">
+              <button mat-menu-item (click)=sportReport() >
+                <mat-icon mat-mini-fab color="primary">assignment</mat-icon>
+                <span>Sport Report</span>
+              </button>
+              <button mat-menu-item (click)=batchReport()>
+                <mat-icon mat-mini-fab color="primary">assignment</mat-icon>
+                <span>Batch Report</span>
+              </button>
+              <button mat-menu-item (click)=enrollmentReport()>
+                <mat-icon mat-mini-fab color="primary">assignment</mat-icon>
+                <span>Enrollment Report</span>
+              </button>
+            </mat-menu>
+        </li>
+        <!-- <li class="nav-item m-3 pt-2 ">
+          <a class="nav-link" routerLink="adminprofile" class="text-light">PROFILE</a>
+        </li> -->
+
+        <li class="nav-item active m-3 text-light">
+          <button mat-raised-button color="accent" (click)="logout()">
+            <mat-icon>directions_run</mat-icon>
+            LOGOUT
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+  <div *ngIf="(userrole | async) as ur">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" *ngIf="ur === 'ROLE_MANAGER'">
+      <a class="navbar-brand" href="#">
+        <img src="../assets/images/1.png" style="display: inline-block;" class="rounded" height="30" width="40">&nbsp;
+        <span style="display: inline-block;" class="text-light">  Deccan Sport Club</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active text-light">
+            <button mat-button [matMenuTriggerFor]="menu">Plan</button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="planlist()">
+                  <mat-icon>card_plan</mat-icon>
+                  <span>Plan</span>
+                </button>
+
+              </mat-menu>
+          </li>
+
+          <li class="nav-item active text-light">
+            <button mat-button [matMenuTriggerFor]="planmenu">Batch</button>
+              <mat-menu #planmenu="matMenu">
+                <button mat-menu-item (click)="batchlist()">
+                  <mat-icon>card_batch</mat-icon>
+                  <span>Batch</span>
+                </button>
+              </mat-menu>
+          </li>
+          <li class="nav-item active text-light">
+            <button mat-button [matMenuTriggerFor]="repMenu">Reports</button>
+            <mat-menu #repMenu="matMenu">
+              <button mat-menu-item (click)="managerBatchReport()">
+                <mat-icon>library_add_check</mat-icon>
+                <span>Batch Report</span>
+              </button>
+              <button mat-menu-item (click)="managerSportReport()">
+                <mat-icon>library_add</mat-icon>
+                <span>Sport Report</span>
+              </button>
+              <button mat-menu-item (click)="managerEnrollmentReport()">
+                <mat-icon>library_add</mat-icon>
+                <span>Enrollment Report</span>
+              </button>
+            </mat-menu>
+          </li>
+
+          <li class="nav-item active text-light">
+            <button mat-button [matMenuTriggerFor]="settingsmenu">Settings</button>
+              <mat-menu #settingsmenu="matMenu">
+                <button mat-menu-item (click)="changepassword()">
+                  <mat-icon>library_add</mat-icon>
+                  <span>Change password</span>
+                </button>
+              </mat-menu>
+          </li>
+          <li class="nav-item active text-light">
+            <button mat-raised-button color="accent" (click)="logout()">
+              <mat-icon>directions_run</mat-icon>
+              Logout
+          </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<router-outlet></router-outlet>
+
+<footer class="footer  " >
+     <div class="container">       <!-- Grid row-->
+       <div class="row d-flex align-items-center">
+         <!-- Grid column -->
+         <div class="footer-copyright text-center text-light py-2"> 2020 Copyright:
+           <a class="text-light"  href="#"> DeccanSports.com </a>
+         </div>
+         <div class="col-md-6 col-lg-7 text-light text-right">
+           <!--Facebook-->
+           <a class="fb-ic mr-3 text-light" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+           <!--Twitter-->
+           <a class="tw-ic mr-3 text-light" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+           <!--Google +-->
+           <a class="gplus-ic mr-3 text-light" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+           <!--Linkedin-->
+           <a class="li-ic mr-3 text-light" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+           <!--Instagram-->
+           <a class="ins-ic mr-3 text-light" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+           <!--Pinterest-->
+           <a class="pin-ic mr-3 text-light" role="button"><i class="fab fa-lg fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+ </footer>
+
+
+
+
+
+
+
+
+
+
